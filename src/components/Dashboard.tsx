@@ -15,30 +15,37 @@ async function getPosts(): Promise<IPosts> {
   return resp.json();
 }
 
-export default async function Dashboard() {
+export default function Dashboard() {
   // <the value of this state could be either a string or a null>
   const [postTitle, setPostTitle] = useState<string | null>(null);
-  const data = await getPosts();
+
+  const [posts, setPosts] = useState([]);
+
+  useState<string | null>(null);
   // (inside params) we make sure to only accept strings
   const changeTitle = (newTitle: string) => {
     setPostTitle(newTitle);
   };
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     changeTitle("HELLOOOO WORLD!");
-  //   }, 10000);
-  // });
+  useEffect(() => {
+    // setTimeout(() => {
+    //   changeTitle("HELLOOOO WORLD!");
+    // }, 10000);
+
+    getPosts()
+      .then((data: any) => setPosts(data))
+      .catch((err: any) => console.error(err));
+  }, []);
 
   return (
     <>
-      {postTitle}
-      {data.map(({ id, title, body }) => (
+      <aside>{postTitle}</aside>
+      {posts.map((post: any) => {
         <article>
-          <h2 key={id}>{title}</h2>
-          <p>{body}</p>
-        </article>
-      ))}
+          <h2 key={post.id}>{post.title}</h2>
+          <p>{post.body}</p>
+        </article>;
+      })}
     </>
   );
 }

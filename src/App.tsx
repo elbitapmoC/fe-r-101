@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Board from "./components/Board";
 import Condition1 from "./components/Condition1";
@@ -16,11 +16,11 @@ function MyButton() {
   return <button onClick={handleClick}>count is {count}</button>;
 }
 
-interface IDetails {
+type IDetails = {
   name: string;
   imageUrl: string;
   imageSize: number;
-}
+};
 
 const MyUser = ({ user }: { user: IDetails }) => {
   const { name, imageUrl, imageSize } = user;
@@ -30,11 +30,13 @@ const MyUser = ({ user }: { user: IDetails }) => {
 
 function App() {
   const [count, setCount] = useState(0);
+
   const user = {
     name: "Hedy Lamarr",
     imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
     imageSize: 90,
   };
+
   const handleClick = () => {
     setCount((count) => count + 1);
   };
