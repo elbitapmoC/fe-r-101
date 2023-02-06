@@ -3,6 +3,7 @@ import "./App.css";
 import Board from "./components/Board";
 import Condition1 from "./components/Condition1";
 import Condition2 from "./components/Condition2";
+import Dashboard from "./components/Dashboard";
 import Lists from "./components/Lists";
 import MyButtonSS from "./components/MyButtonSS";
 import Square from "./components/Square";
@@ -52,6 +53,7 @@ function App() {
 
       {/* TIC TAC TOE */}
       <Board />
+      <Dashboard />
     </div>
   );
 }
