@@ -54,7 +54,7 @@ function App() {
 
       {/* <Dashboard /> */}
 
-      {/* <Game /> */}
+      <Game />
     </div>
   );
 }

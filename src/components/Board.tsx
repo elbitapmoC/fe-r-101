@@ -7,7 +7,10 @@ type IBoards = {
   handlePlay: () => void;
 };
 
-const Board = ({ playerOne, squares, handlePlay }: IBoards) => {
+const Board = () => {
+  const [squares, setSquares] = useState(Array(9).fill(null));
+  const [playerOne, setPlayerOne] = useState(true);
+
   const onSquareClick = (sq: number) => {
     // checks to see if the square is already filled up
     if (squares[sq] || calculateWinner(squares)) {
