@@ -1,12 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import Board from "./components/Board";
 import Condition1 from "./components/Condition1";
 import Condition2 from "./components/Condition2";
 import Dashboard from "./components/Dashboard";
 import Lists from "./components/Lists";
 import MyButtonSS from "./components/MyButtonSS";
-import Square from "./components/Square";
+import Game from "./components/Game";
 
 function MyButton() {
   const [count, setCount] = useState(0);
@@ -29,6 +28,7 @@ const MyUser = ({ user }: { user: IDetails }) => {
 };
 
 function App() {
+  // Separate from TODO
   const [count, setCount] = useState(0);
 
   const user = {
@@ -36,10 +36,9 @@ function App() {
     imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
     imageSize: 90,
   };
+  // END of separation
 
-  const handleClick = () => {
-    setCount((count) => count + 1);
-  };
+  // TODO begins
 
   return (
     <div className="App">
@@ -53,9 +52,9 @@ function App() {
       <MyButtonSS count={count} onClick={handleClick} /> 
       */}
 
-      {/* TIC TAC TOE */}
-      <Board />
-      <Dashboard />
+      {/* <Dashboard /> */}
+
+      {/* <Game /> */}
     </div>
   );
 }

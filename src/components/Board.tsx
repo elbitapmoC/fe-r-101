@@ -1,28 +1,36 @@
 import { useState } from "react";
 import Square from "./Square";
-const Board = () => {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [playerOne, setPlayerOne] = useState(true);
 
+type IBoards = {
+  playerOne: boolean;
+  squares: string[];
+  handlePlay: () => void;
+};
+
+const Board = ({ playerOne, squares, handlePlay }: IBoards) => {
   const onSquareClick = (sq: number) => {
+    // checks to see if the square is already filled up
+    if (squares[sq] || calculateWinner(squares)) {
+      return;
+    }
+
     // Make a copy of array
     const nextSquares = [...squares];
     // Updates value at index to either X or O
     if (playerOne) {
-      if (nextSquares[sq] === null) {
-        nextSquares[sq] = "X";
-        setSquares(nextSquares);
-      }
+      nextSquares[sq] = "X";
+      setSquares(nextSquares);
+      setPlayerOne(!playerOne);
     } else {
-      if (nextSquares[sq] === null) {
-        nextSquares[sq] = "O";
-        setSquares(nextSquares);
-      }
+      nextSquares[sq] = "O";
+      setSquares(nextSquares);
+      setPlayerOne(!playerOne);
     }
   };
 
   return (
     <>
+      <aside>Status: {status}</aside>
       <div className="board-row">
         <Square
           value={squares[0]}
@@ -88,5 +96,25 @@ const Board = () => {
     </>
   );
 };
+
+function calculateWinner(squares: string[]) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
 
 export default Board;
