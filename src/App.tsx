@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Lists from "./components/Lists";
 import MyButtonSS from "./components/MyButtonSS";
 import Game from "./components/Game";
+import Select from "./components/Select";
 
 function MyButton() {
   const [count, setCount] = useState(0);
@@ -38,6 +39,17 @@ function App() {
   };
   // END of separation
 
+  // OPTIONS
+  const options = [
+    { label: "California", value: "CA" },
+    { label: "Texas", value: "TX" },
+    { label: "Washington", value: "WA" },
+    { label: "Florida", value: "FL" },
+    { label: "Virginia", value: "VA" },
+    { label: "Georgia", value: "GA" },
+    { label: "Michigan", value: "MI" },
+  ];
+
   // TODO begins
 
   return (
@@ -50,11 +62,10 @@ function App() {
       <Lists />
       <MyButtonSS count={count} onClick={handleClick} />
       <MyButtonSS count={count} onClick={handleClick} /> 
-      */}
-
-      {/* <Dashboard /> */}
-
+      <Dashboard />
       <Game />
+      */}
+      <Select options={options} />
     </div>
   );
 }
