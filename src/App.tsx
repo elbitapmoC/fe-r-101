@@ -6,7 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Lists from "./components/Lists";
 import MyButtonSS from "./components/MyButtonSS";
 import Game from "./components/Game";
-import Select from "./components/Select";
+import { Select, SelectOption } from "./components/Select";
 
 function MyButton() {
   const [count, setCount] = useState(0);
@@ -29,16 +29,6 @@ const MyUser = ({ user }: { user: IDetails }) => {
 };
 
 function App() {
-  // Separate from TODO
-  const [count, setCount] = useState(0);
-
-  const user = {
-    name: "Hedy Lamarr",
-    imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
-    imageSize: 90,
-  };
-  // END of separation
-
   // OPTIONS
   const options = [
     { label: "California", value: "CA" },
@@ -50,10 +40,26 @@ function App() {
     { label: "Michigan", value: "MI" },
   ];
 
+  // Separate from TODO
+  const [count, setCount] = useState(0);
+
+  // Single Value
+  const [value1, setValue1] = useState<SelectOption | undefined>(options[0]);
+
+  // Multiple values
+  const [value2, setValue2] = useState<SelectOption[]>([options[0]]);
+
+  const user = {
+    name: "Hedy Lamarr",
+    imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
+    imageSize: 90,
+  };
+  // END of separation
+
   // TODO begins
 
   return (
-    <div className="App">
+    <>
       {/* 
       <MyButton />
       <MyUser user={user} />
@@ -65,8 +71,25 @@ function App() {
       <Dashboard />
       <Game />
       */}
-      <Select options={options} />
-    </div>
+      <Select
+        options={options}
+        value={value1}
+        onChange={(o) => {
+          setValue1(o);
+        }}
+      />
+
+      <hr />
+
+      <Select
+        multiple
+        options={options}
+        value={value2}
+        onChange={(o) => {
+          setValue2(o);
+        }}
+      />
+    </>
   );
 }
 
