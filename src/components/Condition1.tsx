@@ -1,5 +1,3 @@
-import React from "react";
-
 const AdminPanel = () => {
   return <p>BOOM Shakalaka!</p>;
 };
@@ -9,13 +7,16 @@ const NormalPanel = () => {
 };
 
 const Condition1 = () => {
-  let displayType = "Admin";
-  let userType;
-  if (displayType === "Admin") {
-    userType = <AdminPanel />;
-  } else userType = <NormalPanel />;
+  const panelType: string = "nada";
+  let showPanel;
 
-  return <div>{userType}</div>;
+  if (panelType === "Admin") {
+    showPanel = <AdminPanel />;
+  } else {
+    showPanel = <NormalPanel />;
+  }
+
+  return <>{showPanel}</>;
 };
 
 export default Condition1;

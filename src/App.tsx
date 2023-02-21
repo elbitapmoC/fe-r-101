@@ -7,29 +7,13 @@ import Lists from "./components/Lists";
 import MyButtonSS from "./components/MyButtonSS";
 import Game from "./components/Game";
 import { Select, SelectOption } from "./components/Select";
-
-function MyButton() {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount((count) => count + 1);
-  };
-  return <button onClick={handleClick}>count is {count}</button>;
-}
-
-type IDetails = {
-  name: string;
-  imageUrl: string;
-  imageSize: number;
-};
-
-const MyUser = ({ user }: { user: IDetails }) => {
-  const { name, imageUrl, imageSize } = user;
-
-  return <p>Helllooooo {name}!</p>;
+import MyUser from "./components/MyUser";
+const user = {
+  name: "Hedy Lamarr",
+  imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
 };
 
 function App() {
-  // OPTIONS
   const options = [
     { label: "California", value: "CA" },
     { label: "Texas", value: "TX" },
@@ -39,9 +23,6 @@ function App() {
     { label: "Georgia", value: "GA" },
     { label: "Michigan", value: "MI" },
   ];
-
-  // Separate from TODO
-  const [count, setCount] = useState(0);
 
   // Single Value
   const [value1, setValue1] = useState<SelectOption | undefined>(options[0]);
@@ -54,20 +35,15 @@ function App() {
     imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
     imageSize: 90,
   };
-  // END of separation
 
-  // TODO begins
+  const [count, setCount] = useState(0);
 
+  const handleClick = () => {
+    setCount(count + 1);
+  };
   return (
     <>
       {/* 
-      <MyButton />
-      <MyUser user={user} />
-      <Condition1 />
-      <Condition2 />
-      <Lists />
-      <MyButtonSS count={count} onClick={handleClick} />
-      <MyButtonSS count={count} onClick={handleClick} /> 
       <Dashboard />
       <Game />
       */}
@@ -89,6 +65,18 @@ function App() {
           setValue2(o);
         }}
       />
+
+      <MyUser user={user} />
+
+      <MyButtonSS count={count} onClick={handleClick} />
+
+      <Condition1 />
+
+      <Condition2 />
+
+      <Lists />
+
+      <Game />
     </>
   );
 }

@@ -1,15 +1,19 @@
-type ISquare = {
-  value: string;
-  handleClick: () => void;
+import { useState } from "react";
+
+type SquareProps = {
+  value: string | null;
+  onSquareClick: () => void;
 };
 
-const Square = ({ value, handleClick }: ISquare) => {
+const Square = ({ value, onSquareClick }: SquareProps) => {
+  const handleClick = () => {
+    console.log("object");
+  };
+
   return (
-    <>
-      <button className="square" onClick={handleClick}>
-        {value}
-      </button>
-    </>
+    <button className="square" onClick={onSquareClick}>
+      {value}
+    </button>
   );
 };
 

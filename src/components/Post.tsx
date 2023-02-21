@@ -1,5 +1,3 @@
-import React from "react";
-
 type IPost = {
   userId?: number;
   id: number;

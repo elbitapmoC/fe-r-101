@@ -4,7 +4,7 @@ type ButtonProps = {
 };
 
 const MyButtonSS = ({ count, onClick }: ButtonProps) => {
-  return <button onClick={onClick}>{count}</button>;
+  return <button onClick={onClick}>Button: {count}</button>;
 };
 
 export default MyButtonSS;

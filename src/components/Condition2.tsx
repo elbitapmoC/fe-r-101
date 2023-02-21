@@ -1,5 +1,3 @@
-import React from "react";
-
 const Condition2 = () => {
   const isAdmin = false;
   return <>{isAdmin && <p>AYEEE</p>}</>;

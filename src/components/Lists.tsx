@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Lists = () => {
   const [users, setUsers] = useState([]);
@@ -10,16 +10,13 @@ const Lists = () => {
   };
 
   const listUsers = users.map(
-    ({ id, username }: { id: number; username: string }) => (
-      <aside
-        key={id}
-        style={{
-          color: id % 2 === 0 ? "orange" : "royalblue",
-        }}
-      >
-        {username}
-      </aside>
-    )
+    ({ id, username }: { id: number; username: string }) => {
+      return (
+        <aside key={id} style={{ color: id % 2 === 0 ? "orange" : "blue" }}>
+          {username}
+        </aside>
+      );
+    }
   );
 
   useEffect(() => {
