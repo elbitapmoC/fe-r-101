@@ -10,7 +10,6 @@ export default function Game() {
   const xIsNext = currentMove % 2 === 0;
   // this is how we'll track the previous moves
   const currentSquares = history[currentMove];
-  console.log("zzzzzz", currentSquares);
 
   function handlePlay(nextSquares: string[]) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
