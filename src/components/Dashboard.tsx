@@ -24,7 +24,6 @@ async function getPosts(): Promise<IPosts> {
 }
 
 export default function Dashboard() {
-  // <the value of this state could be either a string or a null>
   const [postTitle, setPostTitle] = useState<string | null>(null);
 
   const [posts, setPosts] = useState([]);
