@@ -12,6 +12,7 @@ import UseEffect from "./components/UseEffect";
 import UseContext from "./components/UseContext";
 import UseRef from "./components/UseRef";
 import UseReducer from "./components/UseReducer";
+import Pokemon from "./components/Pokemon";
 const user = {
   name: "Hedy Lamarr",
   imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
@@ -89,6 +90,8 @@ function App() {
       <UseRef />
 
       <UseReducer />
+
+      <Pokemon />
     </>
   );
 }
