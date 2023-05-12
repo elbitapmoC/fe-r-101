@@ -11,7 +11,7 @@ type IPosts = {
 type IPost = {
   userId?: number;
   id: number;
-  title: string; //this may or may not exist
+  title?: string; //this may or may not exist
   body: string;
 };
 
@@ -38,16 +38,15 @@ export default function Dashboard() {
 
   const handleClick = (e: React.MouseEvent) => {
     setPostTitle("Mango Butter");
-    // console.log(e);
   };
 
   return (
     <>
       <aside>{postTitle}</aside>
       <button onClick={handleClick}>Click Me!</button>
-      {posts.map(({ id, title, body }: IPost) => {
-        <Post id={id} title={title} body={body} />;
-      })}
+      {posts.map(({ id, title, body }: IPost) => (
+        <Post id={id} title={title} body={body} />
+      ))}
     </>
   );
 }

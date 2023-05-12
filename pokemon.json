@@ -16572,7 +16572,8 @@
     "french": ""
   },
   "type": [
-    "Steel"
+    "Steel",
+     "Air"
   ],
   "base": {
     "HP": 135,

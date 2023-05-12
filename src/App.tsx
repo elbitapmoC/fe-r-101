@@ -6,7 +6,6 @@ import Dashboard from "./components/Dashboard";
 import Lists from "./components/Lists";
 import MyButtonSS from "./components/MyButtonSS";
 import Game from "./components/Game";
-import { Select, SelectOption } from "./components/Select";
 import MyUser from "./components/MyUser";
 import UseEffect from "./components/UseEffect";
 import UseContext from "./components/UseContext";
@@ -29,12 +28,6 @@ function App() {
     { label: "Michigan", value: "MI" },
   ];
 
-  // Single Value
-  const [value1, setValue1] = useState<SelectOption | undefined>(options[0]);
-
-  // Multiple values
-  const [value2, setValue2] = useState<SelectOption[]>([options[0]]);
-
   const user = {
     name: "Hedy Lamarr",
     imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
@@ -48,50 +41,29 @@ function App() {
   };
   return (
     <>
-      {/* 
       <Dashboard />
-      <Game />
-      */}
-      <Select
-        options={options}
-        value={value1}
-        onChange={(o) => {
-          setValue1(o);
-        }}
-      />
 
-      <hr />
+      {/* <MyUser user={user} /> */}
 
-      <Select
-        multiple
-        options={options}
-        value={value2}
-        onChange={(o) => {
-          setValue2(o);
-        }}
-      />
+      {/* <MyButtonSS count={count} onClick={handleClick} /> */}
 
-      <MyUser user={user} />
+      {/* <Condition1 /> */}
 
-      <MyButtonSS count={count} onClick={handleClick} />
+      {/* <Condition2 /> */}
 
-      <Condition1 />
+      {/* <Lists /> */}
 
-      <Condition2 />
+      {/* <Game /> */}
 
-      <Lists />
+      {/* <UseEffect /> */}
 
-      <Game />
+      {/* <UseContext /> */}
 
-      <UseEffect />
+      {/* <UseRef /> */}
 
-      <UseContext />
+      {/* <UseReducer /> */}
 
-      <UseRef />
-
-      <UseReducer />
-
-      <Pokemon />
+      {/* <Pokemon /> */}
     </>
   );
 }

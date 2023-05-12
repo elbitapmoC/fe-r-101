@@ -1,3 +1,4 @@
+import { useState } from "react";
 import pokemons from "./../../pokemon.json";
 
 type PokeProps = {
@@ -20,10 +21,20 @@ type PokeProps = {
 };
 
 const Pokemon = () => {
+  const [filter, setFilter] = useState("");
   return (
     <>
       <h1>Pokemon Search</h1>
-      <table>
+      <input
+        value={filter}
+        onChange={(e) => {
+          setFilter(e.target.value);
+        }}
+        type="text"
+        placeholder="Find your Pikachu!"
+        className="my-10"
+      />
+      <table width="100%">
         <thead>
           <tr>
             <th>Name</th>

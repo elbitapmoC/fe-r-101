@@ -1,7 +1,7 @@
 type IPost = {
   userId?: number;
   id: number;
-  title: string; //this may or may not exist
+  title?: string; //this may or may not exist
   body: string;
 };
 
