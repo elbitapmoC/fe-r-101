@@ -1,5 +1,5 @@
 const Condition2 = () => {
-  const isAdmin = false;
+  const isAdmin = true;
   return <>{isAdmin && <p>AYEEE</p>}</>;
 };
 

@@ -8,6 +8,8 @@ const State = () => {
       setCount((count) => count + 1);
     }, 1000);
 
+    // Without our side effect below, this component will be rendered on initiation as well as once it unmounts.
+    // Cleanup - a way of stopping side effects that do not need to be executed anymore
     return () => clearTimeout(timer);
   }, []);
 

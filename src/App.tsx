@@ -2,9 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Condition1 from "./components/Condition1";
 import Condition2 from "./components/Condition2";
-import Dashboard from "./components/Dashboard";
 import Lists from "./components/Lists";
-import MyButtonSS from "./components/MyButtonSS";
 import Game from "./components/Game";
 import MyUser from "./components/MyUser";
 import UseEffect from "./components/UseEffect";
@@ -41,11 +39,7 @@ function App() {
   };
   return (
     <>
-      <Dashboard />
-
       {/* <MyUser user={user} /> */}
-
-      {/* <MyButtonSS count={count} onClick={handleClick} /> */}
 
       {/* <Condition1 /> */}
 
@@ -55,7 +49,7 @@ function App() {
 
       {/* <Game /> */}
 
-      {/* <UseEffect /> */}
+      <UseEffect />
 
       {/* <UseContext /> */}
 

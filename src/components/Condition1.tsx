@@ -7,7 +7,7 @@ const NormalPanel = () => {
 };
 
 const Condition1 = () => {
-  const panelType: string = "nada";
+  const panelType: string = "Adam";
   let showPanel;
 
   if (panelType === "Admin") {
