@@ -10,6 +10,7 @@ import UseContext from "./components/UseContext";
 import UseRef from "./components/UseRef";
 import UseReducer from "./components/UseReducer";
 import Pokemon from "./components/Pokemon";
+import Form from "./components/Form";
 const user = {
   name: "Hedy Lamarr",
   imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
@@ -49,7 +50,7 @@ function App() {
 
       {/* <Game /> */}
 
-      <UseEffect />
+      {/* <UseEffect /> */}
 
       {/* <UseContext /> */}
 
@@ -58,6 +59,8 @@ function App() {
       {/* <UseReducer /> */}
 
       {/* <Pokemon /> */}
+
+      <Form />
     </>
   );
 }

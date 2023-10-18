@@ -107,5 +107,5 @@ button:focus-visible {
 }
 
 [type=text] {
-  background-color: #213547;
+  /* background-color: #213547; */
 }
